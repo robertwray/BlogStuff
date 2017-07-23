@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Data to send to controller</legend>
+        <table>
+            <tr>
+                <td>
+                    <label for="otherValue">Other Value</label>
+                </td>
+                <td>
+                    <input type="number" id="otherValue" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="xmlString">XML to upload</label>
+                </td>
+                <td>
+                    <textarea id="xmlString" rows="10" style="width: 300px;">
+<sampleXml>
+    <childNode id="1" />
+    <childNode id="2" />
+    <childNode id="3" />
+    <childNode id="4" />
+</sampleXml>
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <input type="button" value="Send" id="send-button" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $("#send-button").click(function ()
+            {
+                var urlForAjax = '@Url.Action("TransferXMLData", "Xml")';
+                var xmlToSend = $("#xmlString").text();
+                var numberToSend = $("#otherValue").val();
+                
+                $.ajax({
+                    type: "POST",
+                    url: urlForAjax,
+                    data:
+                    {
+                        xmlText: xmlToSend,
+                        otherValue: numberToSend
+                    },
+                    success: function (sReturnValue)
+                    {
+                        var success = sReturnValue.hasOwnProperty('Success') ? sReturnValue.Success : false;
+                        alert("Success returned from server is: " + success);
+                    },
+                    error: function ()
+                    {
+                        alert("There was an error on the server side");
+                    }
+                });
+            });
+        });
+    </script>
+}
