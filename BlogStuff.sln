@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcXDocumentModelBinder", "MvcXDocumentModelBinder\MvcXDocumentModelBinder.csproj", "{31A32559-2386-45A5-9319-3A1B62B2D50E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniProfilerWithWebFormsAndMvc", "MiniProfilerWithWebFormsAndMvc\MiniProfilerWithWebFormsAndMvc.csproj", "{D1B9C7F2-9D82-4D81-9847-155F360B70F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{31A32559-2386-45A5-9319-3A1B62B2D50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31A32559-2386-45A5-9319-3A1B62B2D50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31A32559-2386-45A5-9319-3A1B62B2D50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B9C7F2-9D82-4D81-9847-155F360B70F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B9C7F2-9D82-4D81-9847-155F360B70F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B9C7F2-9D82-4D81-9847-155F360B70F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B9C7F2-9D82-4D81-9847-155F360B70F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
