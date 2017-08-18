@@ -1,6 +1,7 @@
 ﻿using StackExchange.Profiling;
 using System;
 using System.Web;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -23,7 +24,10 @@ namespace MiniProfilerWithWebFormsAndMvc
         /// </summary>
         protected void Application_BeginRequest()
         {
-            MiniProfiler.Start();
+            if (HttpContext.Current.Request.Cookies.AllKeys.Contains("EnableMiniProfiler"))
+            {
+                MiniProfiler.Start();
+            }
         }
 
         protected void Application_EndRequest()
