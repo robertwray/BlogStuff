@@ -44,5 +44,9 @@
     <Compile Include="Latest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Create_Functions.sql" />
+    <Content Include="Deploy_Assembly.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
