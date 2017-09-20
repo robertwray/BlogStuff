@@ -27,6 +27,7 @@ namespace MiniProfilerWithWebFormsAndMvc
             if (HttpContext.Current.Request.Cookies.AllKeys.Contains("EnableMiniProfiler"))
             {
                 MiniProfiler.Start();
+                MiniProfiler.Settings.Results_List_Authorize = new Func<HttpRequest, bool>((request) => { return true; });
             }
         }
 
